@@ -782,7 +782,7 @@ nav .nav-container a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 70px); 
+  height: calc(100% - 70px);
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -825,20 +825,20 @@ nav .nav-container a:hover {
   .rail-park-sections {
     padding: 40px 20px;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(1) {
     grid-column: 1 / span 6;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(2) {
     grid-column: 7 / span 6;
     margin-top: 80px;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(3) {
     grid-column: 2 / span 6;
   }
-  
+
   .rail-section-description {
     grid-column: 1 / span 6;
   }
@@ -848,27 +848,27 @@ nav .nav-container a:hover {
   .rail-park-sections {
     grid-template-columns: repeat(6, 1fr);
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(1) {
     grid-column: 1 / span 3;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(2) {
     grid-column: 4 / span 3;
     margin-top: 0;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(3) {
     grid-column: 1 / span 6;
     grid-row: 3;
     margin-top: 40px;
   }
-  
+
   .rail-section-description {
     grid-column: 1 / span 6;
     grid-row: 2;
   }
-  
+
   .rail-section-container h3 {
     font-size: 32px;
   }
@@ -880,22 +880,22 @@ nav .nav-container a:hover {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .rail-park-sections .rail-section-container:nth-child(1),
   .rail-park-sections .rail-section-container:nth-child(2),
   .rail-park-sections .rail-section-container:nth-child(3) {
     margin-top: 0;
   }
-  
+
   .rail-section-description {
     order: -1;
     margin-bottom: 20px;
   }
-  
+
   .rail-section-container h3 {
     font-size: 28px;
   }
-  
+
   .rail-hover-media {
     height: calc(100% - 60px);
   }
@@ -905,27 +905,28 @@ nav .nav-container a:hover {
   .rail-park-sections {
     padding: 30px 15px;
   }
-  
+
   .rail-section-container h3 {
     font-size: 24px;
   }
-  
+
   .rail-section-container p {
     font-size: 14px;
   }
-  
+
   .rail-section-description p {
     font-size: 16px;
   }
-  
+
   .rail-learn-more {
     font-size: 14px;
   }
-  
+
   .rail-hover-media {
     height: calc(100% - 50px);
   }
 }
+
 
 .email-container {
   display: flex;
