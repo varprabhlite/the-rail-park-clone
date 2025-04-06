@@ -367,6 +367,10 @@ nav .nav-container a:hover {
   .menu-link.large {
     font-size: 4.5rem;
   }
+
+  .footer-section{
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
