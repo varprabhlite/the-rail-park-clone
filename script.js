@@ -36,8 +36,7 @@ let cursorPosition = [0, 0];
 let videoPosition = [0, 0];
 
 window.addEventListener("scroll", () => {
-  const currentScroll =
-    window.pageYOffset || document.documentElement.scrollTop;
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
   if (currentScroll > lastScrollPosition) {
     navContainer.style.transform = "translateY(-100%)";
@@ -192,67 +191,20 @@ if (threeGreenway) {
   observeElements([threeGreenway], "animate-in");
 }
 
-const initializeHoverMedia = () => {
-  const mediaElements = document.querySelectorAll(".hover-media");
-
-  mediaElements.forEach((media) => {
-    const container = media.closest(".media-container");
-
-    if (container) {
-      container.addEventListener("mouseenter", () => {
-        if (media.tagName === "VIDEO") {
-          media.play();
-        }
-        media.style.opacity = "1";
-      });
-
-      container.addEventListener("mouseleave", () => {
-        if (media.tagName === "VIDEO") {
-          media.pause();
-          media.currentTime = 0;
-        }
-        media.style.opacity = "0";
-      });
-    }
-  });
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  initializeHoverMedia();
-});
-
 const initializeVisitSection = () => {
   const visitLocations = document.querySelectorAll(".visit-location");
-  const visitTitle = document.querySelector(".visit-title");
-
-  const observeVisitTitle = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          visitTitle.classList.add("visit-title-intro-animated");
-          observeVisitTitle.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  if (visitTitle) {
-    observeVisitTitle.observe(visitTitle);
-  }
 
   visitLocations.forEach((location) => {
-    const videoElement = location.querySelector(".hover-media");
-    const imageElement = location.querySelector(".location-image");
+    const videoElement = location.querySelector(".hover-media");  
 
     location.addEventListener("mouseenter", () => {
-      if (videoElement && videoElement.tagName === "VIDEO") {
+      if (videoElement) {
         videoElement.play();
       }
     });
 
     location.addEventListener("mouseleave", () => {
-      if (videoElement && videoElement.tagName === "VIDEO") {
+      if (videoElement) {
         videoElement.pause();
         videoElement.currentTime = 0;
       }
@@ -260,51 +212,38 @@ const initializeVisitSection = () => {
   });
 };
 
-const initializeParkSections = () => {
-  const sectionContainers = document.querySelectorAll(
-    ".rail-section-container"
-  );
-  const sectionDescription = document.querySelector(
-    ".rail-section-description"
-  );
+const railParkSection = () => {
+  const mediaContainers = document.querySelectorAll(".rail-media-container");
 
-  // Add parallax effect to description on scroll
-  window.addEventListener("scroll", () => {
-    if (sectionDescription && window.innerWidth > 970) {
-      const rect = sectionDescription.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (windowHeight - rect.top > 0 && rect.bottom > 0) {
-        const relVelocity = 0.1;
-        sectionDescription.style.transform = `translateY(${
-          (windowHeight - rect.top) * relVelocity
-        }px)`;
-      }
-    }
-  });
-
-  // Add hover effect for videos
-  sectionContainers.forEach((container) => {
-    const videoElement = container.querySelector(".rail-hover-media");
+  mediaContainers.forEach((container) => {
+    const video = container.querySelector(".rail-section-video");
 
     container.addEventListener("mouseenter", () => {
-      if (videoElement && videoElement.tagName === "VIDEO") {
-        videoElement.play();
+      if (video) {
+        video.play();
       }
     });
 
     container.addEventListener("mouseleave", () => {
-      if (videoElement && videoElement.tagName === "VIDEO") {
-        videoElement.pause();
-        videoElement.currentTime = 0;
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
       }
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    mediaContainers.forEach((container) => {
+      const containerOffset = container.getBoundingClientRect().top + scrollPosition;
+      const offset = (scrollPosition - containerOffset) * 0.15;
+      container.style.transform = `translateY(-${offset}px)`;
     });
   });
 };
 
-// Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   initializeVisitSection();
-  initializeParkSections();
-  initializeParallaxEffects();
+  railParkSection();
 });

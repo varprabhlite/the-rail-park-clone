@@ -1,0 +1,150 @@
+#rail-section {
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: auto;
+  position: relative;
+}
+
+.rail-section-container {
+  position: relative;
+}
+
+.viaduct {
+  grid-column: 1 / span 5;
+  grid-row: 1 / span 2;
+  margin-top: 40px;
+  display: flex;
+} 
+
+.viaduct-heading{
+  margin-left: 20px;
+}
+
+.cut .rail-media-container{
+  aspect-ratio: 16 / 9;
+}
+
+.cut {
+  grid-column: 8 / span 5;
+  grid-row: 3 / 4;
+  transform: translateY(-200px);
+}
+
+.tunnel {
+  display: flex;
+  grid-column: 5 / span 3;
+  grid-row: 4;  
+}
+
+.tunnel-heading{
+  margin-left: 20px;
+}
+
+.vision-content {
+  grid-column: 2 / span 4;
+  grid-row: 3;
+}
+
+
+.rail-media-container {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+ 
+}
+
+.rail-section-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+.rail-section-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.rail-media-container:hover .rail-section-image {
+  opacity: 0;
+}
+
+.rail-media-container:hover .rail-section-video {
+  opacity: 1;
+}
+
+
+.rail-section-info {
+  margin-top: 10px;
+}
+
+.rail-section-info h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+}
+
+
+.rail-section-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+#future-vision {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  line-height: 1.7;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.learn-more svg {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.learn-more:hover {
+  color: #04c75c;
+}
+
+.learn-more:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 970px) {
+  #future-vision {
+    font-size: 1rem;
+  }
+
+  .rail-section-info h2 {
+    font-size: 2.3rem;
+  }
+
+  .tunnel{
+    grid-column: 5 / span 4;
+  }
+}
+

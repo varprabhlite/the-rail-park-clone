@@ -1,0 +1,96 @@
+.three-mile-greenway {
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 0 8rem 8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.three-mile-greenway h1 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 1;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.three-mile-greenway h1.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.three-mile-greenway .video-tracker {
+  color: var(--accent-color-dark);
+  display: inline;
+  cursor: pointer;
+}
+
+.video-tracker:hover ~ .video-placeholder {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.three-mile-greenway {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.video-placeholder {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.video-placeholder video {
+  height: 320px;
+  border-radius: 6px;
+}
+
+.three-mile-greenway p {
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+@media (max-width: 970px) {
+  .three-mile-greenway {
+    padding: 6rem 0 6rem 4rem;
+  }
+
+  .three-mile-greenway h1 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .three-mile-greenway h1 {
+    font-size: 3rem;
+  }
+
+  .three-mile-greenway p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .three-mile-greenway {
+    padding: 4rem 1rem;
+  }
+
+  .three-mile-greenway h1 {
+    font-size: 2.5rem;
+  }
+
+  .three-mile-greenway p {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .video-placeholder video {
+    height: 200px;
+  }
+}
