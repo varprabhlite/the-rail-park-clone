@@ -94,3 +94,17 @@
     height: 200px;
   }
 }
+
+@media (max-width: 480px) {
+  .three-mile-greenway h1 {
+    font-size: 1.8rem;
+  }
+
+  .three-mile-greenway p {
+    font-size: 1rem;
+  }
+
+  .video-placeholder video {
+    height: 150px;
+  }
+}

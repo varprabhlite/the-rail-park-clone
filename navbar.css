@@ -127,7 +127,7 @@ nav .nav-container a:hover {
   top: 18vh;
   left: 0;
   width: 100%;
-  height: calc(100vh - 18vh);
+  height: 100vh;
   background-color: var(--color-dark);
   color: white;
   z-index: 999;
@@ -405,10 +405,6 @@ nav .nav-container a:hover {
   nav .nav-container {
     height: 12vh;
     padding: 0 1rem;
-  }
-
-  .nav-right .donate-button {
-    padding: 0.6rem 1.5rem;
   }
 
   .hamburger-content {
