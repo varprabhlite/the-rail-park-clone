@@ -401,11 +401,6 @@ nav .nav-container a:hover {
     margin-bottom: 2rem;
   }
   
-  .menu-link.large {
-    font-size: 3.5rem;
-    margin: 0.2rem 0;
-  }
-  
   .column-1 {
     display: flex;
     flex-direction: column;
@@ -414,10 +409,9 @@ nav .nav-container a:hover {
   }
   
   .column-1 .menu-link {
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-family: "Mongoose", sans-serif;
     text-transform: uppercase;
-    margin: 0.5rem 0;
   }
   
   .column-2, .column-3 {
@@ -530,71 +524,5 @@ nav .nav-container a:hover {
   
 }
 
-@media (max-width: 768px) {
-  .hamburger-content.submenu-active .column-1 {
-    display: none;
-  }
-  
-  .hamburger-content.submenu-active .column-2,
-  .hamburger-content.submenu-active .column-3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .hamburger-content.submenu-active .menu-link {
-    font-size: 1.5rem;
-    margin: 0.8rem 0;
-  }
-  
-  .hamburger-content.submenu-active .column-4 {
-    margin-top: 3rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .hamburger-content.contact-active .column-1,
-  .hamburger-content.contact-active .column-2,
-  .hamburger-content.contact-active .column-3 {
-    display: none;
-  }
-  
-  .hamburger-content.contact-active .column-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .hamburger-content.contact-active .contact-section,
-  .hamburger-content.contact-active .office-section {
-    margin-bottom: 2.5rem;
-  }
-  
-  .hamburger-content.contact-active .contact-section h3,
-  .hamburger-content.contact-active .office-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .hamburger-content.contact-active .contact-section a,
-  .hamburger-content.contact-active .contact-section p,
-  .hamburger-content.contact-active .office-section p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-  }
-  
-  .hamburger-content.contact-active .social-icons {
-    margin-top: 1.5rem;
-  }
-  
-  .hamburger-content.contact-active .social-icons a {
-    font-size: 1.8rem;
-    margin: 0 0.8rem;
-  }
-  
-  .hamburger-content.contact-active .copyright-section {
-    margin-top: 3rem;
-  }
-}
+
