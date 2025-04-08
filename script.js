@@ -32,8 +32,6 @@ menuItems.forEach((item, index) => {
 });
 
 let lastScrollPosition = 0;
-let cursorPosition = [0, 0];
-let videoPosition = [0, 0];
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
