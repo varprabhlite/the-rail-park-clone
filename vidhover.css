@@ -148,3 +148,12 @@
   }
 }
 
+@media (max-width: 620px) {
+  .rail-section-info h2 {
+    font-size: 2rem;
+  }
+
+  .rail-section-info p {
+    font-size: 0.9rem;
+  }
+} 
