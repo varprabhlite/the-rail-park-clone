@@ -231,12 +231,11 @@ const railParkSection = () => {
   });
 
   window.addEventListener("scroll", () => {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
     mediaContainers.forEach((container) => {
-      const containerOffset = container.getBoundingClientRect().top + scrollPosition;
-      const offset = (scrollPosition - containerOffset) * 0.15;
-      container.style.transform = `translateY(-${offset}px)`;
+      const containerOffset = container.getBoundingClientRect().top;
+      const offset = containerOffset * 0.08;
+      container.style.transform = `translateY(${offset}px)`;
     });
   });
 };
