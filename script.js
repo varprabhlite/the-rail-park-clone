@@ -233,9 +233,10 @@ const railParkSection = () => {
   window.addEventListener("scroll", () => {
 
     mediaContainers.forEach((container) => {
-      const containerOffset = container.getBoundingClientRect().top;
-      const offset = containerOffset * 0.08;
-      container.style.transform = `translateY(${offset}px)`;
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const containerOffset = container.getBoundingClientRect().top + currentScroll;
+      const offset = (currentScroll - containerOffset) * 0.2;
+      container.style.transform = `translateY(-${offset}px)`;
     });
   });
 };
