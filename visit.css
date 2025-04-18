@@ -47,7 +47,7 @@
   top: 0;
   left: 0;
   width: 50%;
-  height: 300px;
+  height: 310px;
   object-fit: cover;
   border-radius: 5px;
   opacity: 0;
@@ -86,7 +86,7 @@
 .visit-location-info h3 {
   font-size: 2.8rem;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-top: 3rem;
   display: inline-block;
   margin-right: 5rem;
 }
@@ -107,8 +107,9 @@
 }
 
 .accessibility-info {
+  margin-top: 3.5rem;
   display: flex;
-  gap: 5rem;
+  gap: 10rem;
 }
 
 .accessibility-info i {

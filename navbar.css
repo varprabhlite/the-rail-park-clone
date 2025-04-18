@@ -1,7 +1,7 @@
 
 nav .nav-container {
   position: fixed;
-  height: 18vh;
+  height: 16vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -63,15 +63,15 @@ nav .nav-container a:hover {
 }
 
 .nav-left .hamburger .bar.bottom {
-  top: 1.5rem;
+  top: 1.3rem;
 }
 
 .nav-left .hamburger.open .bar.top {
-  transform: rotate(45deg) translateY(0.7rem);
+  transform: rotate(45deg) translateY(0.6rem);
 }
 
 .nav-left .hamburger.open .bar.bottom {
-  transform: rotate(-45deg) translateY(-0.7rem);
+  transform: rotate(-45deg) translateY(-0.6rem);
 }
 
 .nav-center a svg path {
@@ -124,10 +124,10 @@ nav .nav-container a:hover {
 
 .hamburger-content {
   position: fixed;
-  top: 18vh;
+  top: 16vh;
   left: 0;
   width: 100%;
-  height: calc(100vh - 18vh);
+  height: calc(100vh - 16vh);
   background-color: var(--color-dark);
   color: white;
   z-index: 999;

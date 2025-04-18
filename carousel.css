@@ -35,6 +35,44 @@
   z-index: 20;
 }
 
+.carousel-indicators-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.carousel-indicators{
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-indicator{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark);
+  color: white;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicator.active{
+  background-color: var(--accent-color-dark);
+  color: black;
+}
+
+.carousel-indicator:hover{
+  opacity: 0.8;
+}
+
+.carousel-indicator:active{
+  transform: scale(0.9);
+}
+
 .hero {
   height: 100vh;
   padding: 20vh 4rem 4rem;
@@ -183,6 +221,12 @@
     font-size: 6rem;
   }
 
+  .slide-adder-container button, .slide-adder-container p {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    transition: none;
+  }
+
   .carousel-wrapper {
     padding: 0 2rem;
     height: 45vh;
@@ -195,7 +239,7 @@
 
 @media (max-width: 970px) {
   .hero {
-    padding: 15vh 2rem 2rem;
+    padding: 
   }
 
   .hero-heading {
@@ -219,8 +263,23 @@
     font-size: 4.5rem;
   }
 
+  .hero-heading{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-adder-container{
+    align-self: center;
+    transform: translateX(2rem);
+  }
+
+  .slide-adder-container button, .slide-adder-container p {
+    font-size: 1rem;
+  }
+
   .carousel-container {
     flex-direction: column;
+
   }
 
   .carousel-container svg {
@@ -283,5 +342,9 @@
 
   .information span {
     font-size: 1.5rem;
+  }
+
+  .carousel-indicators-container{
+    margin-top: 0.5rem;
   }
 }
