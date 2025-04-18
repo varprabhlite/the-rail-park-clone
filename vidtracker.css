@@ -8,7 +8,7 @@
 
 .three-mile-greenway h1 {
   font-size: 4.8rem;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1;
   z-index: 2;
   opacity: 0;
@@ -25,6 +25,7 @@
   color: var(--accent-color-dark);
   display: inline;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .video-tracker:hover ~ .video-placeholder {
@@ -53,7 +54,6 @@
 .three-mile-greenway p {
   margin-top: 4rem;
   font-size: 2rem;
-  font-weight: 200;
 }
 
 @media (max-width: 970px) {

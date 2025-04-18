@@ -1,4 +1,39 @@
+.slide-adder-container{
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 2rem;
+  margin-right: 4rem;
+} 
 
+.slide-adder-container button:hover {
+  background-color: var(--color-dark);
+  color: white;
+}
+
+.slide-adder-container button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+.slide-adder-container button {
+  background: none;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 20;
+  border: 1px solid var(--color-dark);
+  transition: 0.2s ease-in-out;
+}
+
+.slide-adder-container p{
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-dark);
+  margin: 0 2px ;
+  font-size: 2rem;
+  z-index: 20;
+}
 
 .hero {
   height: 100vh;
@@ -10,7 +45,9 @@
 .hero-heading {
   display: flex;
   padding: 0 8rem;
-  position: absolute;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero-heading h1 {
@@ -34,8 +71,9 @@
 .carousel-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
-  padding: 0 5rem;
+  padding: 0 8rem 0 5rem;
   height: 65vh;
 }
 
@@ -43,7 +81,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: transform 0.5s ease, opacity 0.5s ease-in-out;
+  transition: transform 0.35s ease, opacity 0.35s ease-in-out;
 }
 
 .information.fade-out {
@@ -70,7 +108,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.35s;
 }
 
 .information span:hover {
@@ -83,19 +121,20 @@
 
 .information span i {
   font-size: 1.5rem;
-  transition: transform 0.3s;
+  transition: transform 0.35s;
 }
 
 .img-container {
   position: relative;
-  width: 65%;
+  width: 60%;
+  height: 100%;
 }
 
 .img-container .main-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .img-container .hours-badge {
@@ -104,7 +143,7 @@
   right: -4rem;
   top: 3rem;
   height: 30%;
-  transition: 0.5s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
 
 .img-container .main-img.fade-out {
@@ -146,6 +185,7 @@
 
   .carousel-wrapper {
     padding: 0 2rem;
+    height: 45vh;
   }
 
   .information p {
@@ -163,7 +203,7 @@
   }
 
   .carousel-wrapper {
-    height: 55vh;
+    height: 30vh;
   }
 
   .img-container .hours-badge {

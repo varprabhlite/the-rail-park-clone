@@ -127,12 +127,11 @@ nav .nav-container a:hover {
   top: 18vh;
   left: 0;
   width: 100%;
-  height: auto;
-  max-height: calc(100vh - 18vh);  
+  height: calc(100vh - 18vh);
   background-color: var(--color-dark);
   color: white;
   z-index: 999;
-  overflow-y: auto;
+  overflow-y: scroll;
   display: none;
 }
 
@@ -189,7 +188,6 @@ nav .nav-container a:hover {
 .menu-link.large {
   font-size: 6rem;
   font-family: "Mongoose", sans-serif;
-  font-weight: 600;
   text-transform: uppercase;
   line-height: 1.2;
   margin: 0.3rem 0;
@@ -344,7 +342,7 @@ nav .nav-container a:hover {
 
   .hamburger-content{
     transform: translateY(-30px);
-    max-height: calc(100vh - 10vh);  
+    height: calc(100vh - 10vh);  
   }
 
   .column-1 {
@@ -353,6 +351,10 @@ nav .nav-container a:hover {
 
   .menu-link.large {
     font-size: 4.5rem;
+  }
+
+  .column-4 p {
+    font-size: 1rem;
   }
 
   .footer-section{

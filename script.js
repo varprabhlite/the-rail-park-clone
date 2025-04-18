@@ -22,6 +22,13 @@ const emailSubmit = document.getElementById("email-submit");
 const emailMessage = document.getElementById("email-message");
 const heroHeading = document.querySelector(".hero-heading h1");
 const threeGreenway = document.querySelector(".three-mile-greenway h1");
+let carouselImgs = [...document.querySelectorAll(".carousel-img")]
+let carouselInfo = [...document.querySelectorAll(".information")];
+const extraCarouselImgs = [...document.querySelectorAll(".extra-img")];
+const extraCarouselInfo = [...document.querySelectorAll(".extra-information")];
+const slideAdder = document.getElementById("slide-increment");
+const slideRemover = document.getElementById("slide-decrement");
+const slideCounter = document.getElementById("slide-adder-counter");
 
 const menuItems = [...document.querySelectorAll(".menu-columns .menu-link ")];
 const totalDelay = 0.5;
@@ -68,63 +75,113 @@ hamburgerIcon.addEventListener("click", () => {
 
 // Carousel functionality
 let currentIndex = 0;
+let lastIndex = 0;
 
-function showNextSlide() {
-  if (currentIndex === 0) {
-    info1.classList.add("fade-out");
-    img1.classList.add("fade-out");
-    hoursBadge.style.display = "none";
-
-    setTimeout(() => {
-      info1.classList.remove("fade-out");
-      img1.classList.remove("fade-out");
-
-      info1.style.display = "none";
-      img1.style.display = "none";
-
-      info2.style.display = "flex";
-      img2.style.display = "block";
-
-      info2.classList.add("fade-in");
-      img2.classList.add("fade-in");
-
-      setTimeout(() => {
-        info2.classList.remove("fade-in");
-        img2.classList.remove("fade-in");
-      }, 500);
-
-      currentIndex = 1;
-    }, 500);
-  } else {
-    info2.classList.add("fade-out");
-    img2.classList.add("fade-out");
-
-    setTimeout(() => {
-      info2.classList.remove("fade-out");
-      img2.classList.remove("fade-out");
-
-      info2.style.display = "none";
-      img2.style.display = "none";
-
-      info1.style.display = "flex";
-      img1.style.display = "block";
-
-      info1.classList.add("fade-in");
-      img1.classList.add("fade-in");
-
-      setTimeout(() => {
-        info1.classList.remove("fade-in");
-        img1.classList.remove("fade-in");
-        hoursBadge.style.display = "block";
-      }, 500);
-
-      currentIndex = 0;
-    }, 500);
+function changeSlide() {
+  carouselInfo[lastIndex].classList.add("fade-out");
+  carouselImgs[lastIndex].classList.add("fade-out");
+  if(lastIndex === 0) {
+    hoursBadge.style.opacity = "0";
   }
+
+  setTimeout(() => {
+    carouselInfo[lastIndex].classList.remove("fade-out");
+    carouselImgs[lastIndex].classList.remove("fade-out");
+
+    carouselInfo[lastIndex].style.display = "none";
+    carouselImgs[lastIndex].style.display = "none";
+
+    carouselInfo[currentIndex].style.display = "flex";
+    carouselImgs[currentIndex].style.display = "block";
+
+    carouselInfo[currentIndex].classList.add("fade-in");
+    carouselImgs[currentIndex].classList.add("fade-in");
+
+    setTimeout(() => {
+      carouselInfo[currentIndex].classList.remove("fade-in");
+      carouselImgs[currentIndex].classList.remove("fade-in");
+
+      if(currentIndex === 0) {
+        hoursBadge.style.opacity = "100%";
+      }
+    }, 350);
+
+  }, 350);
 }
 
-nextButton.addEventListener("click", showNextSlide);
-prevButton.addEventListener("click", showNextSlide);
+let extraCounter = 0;
+slideCounter.innerText = `${2 + extraCounter}`;
+
+slideAdder.addEventListener("click", () => {
+
+  if(extraCounter < 3) {
+    carouselImgs.push(extraCarouselImgs[extraCounter]);
+    carouselInfo.push(extraCarouselInfo[extraCounter]);
+    extraCounter++;
+    slideCounter.innerText = `${2 + extraCounter}`;
+  }
+
+});
+
+slideRemover.addEventListener("click", () => {
+  if(extraCounter > 0) {
+    const wasOnLastSlide = currentIndex === carouselImgs.length - 1;
+    
+    let removedImg, removedInfo;
+    if (wasOnLastSlide) {
+      removedImg = carouselImgs[currentIndex];
+      removedInfo = carouselInfo[currentIndex];
+    }
+    
+    carouselInfo.pop();
+    carouselImgs.pop();
+    extraCounter--;
+    slideCounter.innerText = `${2 + extraCounter}`;
+    
+    if (wasOnLastSlide) {
+      lastIndex = currentIndex;
+      currentIndex = carouselImgs.length - 1; 
+      
+      removedImg.classList.add("fade-out");
+      removedInfo.classList.add("fade-out");
+      
+      setTimeout(() => {
+        removedImg.style.display = "none";
+        removedInfo.style.display = "none";
+        
+        carouselImgs[currentIndex].style.display = "block";
+        carouselInfo[currentIndex].style.display = "flex";
+        
+        carouselImgs[currentIndex].classList.add("fade-in");
+        carouselInfo[currentIndex].classList.add("fade-in");
+        
+        setTimeout(() => {
+          carouselImgs[currentIndex].classList.remove("fade-in");
+          carouselInfo[currentIndex].classList.remove("fade-in");
+          
+          if(currentIndex === 0) {
+            hoursBadge.style.opacity = "100%";
+          }
+        }, 350);
+      }, 350);
+    }
+  }
+});
+
+nextButton.addEventListener("click", () => {
+  lastIndex = currentIndex;
+  currentIndex = (currentIndex + 1) % carouselImgs.length;
+  changeSlide();
+});
+
+
+prevButton.addEventListener("click", () => {
+    lastIndex = currentIndex;
+    currentIndex = (currentIndex - 1 + carouselImgs.length) % carouselImgs.length;
+    changeSlide();
+});
+
+
 
 videoTracker.addEventListener("mousemove", (e) => {
   const rect = videoTracker.getBoundingClientRect();

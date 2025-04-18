@@ -2,28 +2,13 @@
 
 @font-face {
   font-family: 'Armin Grotesk';
-  src: url('fonts/armin-grotesk/Fontspring-DEMO-armingrotesk-regular.otf') format('opentype');
-  font-weight: 400;
+  src: url('font/armin-grotesk-regular.woff2') format('woff2');
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Armin Grotesk';
-  src: url('fonts/armin-grotesk/Fontspring-DEMO-armingrotesk-thin.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Armin Grotesk';
-  src: url('fonts/armin-grotesk/Fontspring-DEMO-armingrotesk-semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Armin Grotesk';
-  src: url('fonts/armin-grotesk/Fontspring-DEMO-armingrotesk-ultrabold.otf') format('opentype');
+  src: url('font/armin-grotesk-bold.woff2') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
@@ -31,22 +16,7 @@
 
 @font-face {
   font-family: 'Mongoose';
-  src: url('fonts/mongoose/Fontspring-DEMO-mongoose-regular.otf') format('opentype');
+  src: url('font/mongoose.woff2') format('opentype');
   font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mongoose';
-  src: url('fonts/mongoose/Fontspring-DEMO-mongoose-medium.otf') format('opentype');
-  font-weight: medium;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Mongoose';
-  src: url('fonts/mongoose/Fontspring-DEMO-mongoose-bold.otf') format('opentype');
-  font-weight: bold;
   font-style: normal;
 }
