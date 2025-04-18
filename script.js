@@ -268,7 +268,7 @@ const initializeVisitSection = () => {
 };
 
 const railParkSection = () => {
-  const mediaContainers = document.querySelectorAll(".rail-media-container");
+  const mediaContainers = [...document.querySelectorAll(".rail-media-container")];
 
   mediaContainers.forEach((container) => {
     const video = container.querySelector(".rail-section-video");
@@ -287,16 +287,22 @@ const railParkSection = () => {
     });
   });
 
-  window.addEventListener("scroll", () => {
+  const containers = [...document.querySelectorAll(".rail-media-container")];
 
-    mediaContainers.forEach((container) => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const containerOffset = container.getBoundingClientRect().top + currentScroll;
-      const offset = (currentScroll - containerOffset) * 0.2;
-      container.style.transform = `translateY(-${offset}px)`;
-    });
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth > 970) {
+      containers.forEach((container) => {
+        const containerData = container.getBoundingClientRect();
+
+        if (window.innerHeight - containerData.top > 0) {
+          container.style.transform = `translateY(-${(window.innerHeight - containerData.top) * 0.06}px)`; 
+        } else {
+          container.style.transform = "translateY(0)";
+        } 
+      });
+    }
   });
-};
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeVisitSection();

@@ -54,7 +54,7 @@
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 20px;
- 
+  transition: transform 0.1s ease;
 }
 
 .rail-section-image {
