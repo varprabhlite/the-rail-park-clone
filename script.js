@@ -146,12 +146,6 @@
       carouselInfo.push(extraCarouselInfo[extraCounter]);
       extraCounter++;
       slideCounter.innerText = `${2 + extraCounter}`;
-      
-      if (currentIndex >= carouselImgs.length - 1) {
-        lastIndex = currentIndex;
-        currentIndex = carouselImgs.length - 1;
-      }
-
     }
     updateCarouselIndicators();
 
