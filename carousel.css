@@ -1,11 +1,19 @@
 .slide-adder-container{
   display: flex;
-  align-self: flex-end;
   align-items: center;
   align-self: flex-start;
+  flex-direction: column;
   margin-top: 2rem;
   margin-right: 4rem;
 } 
+
+.slide-adder-container > div {
+  display: flex;
+}
+
+.slide-adder-container span {
+  margin-top: 0.2rem;
+}
 
 .slide-adder-container button:hover {
   background-color: var(--color-dark);
@@ -38,8 +46,9 @@
 .carousel-indicators-container{
   display: flex;
   justify-content: center;
+  justify-self: flex-start;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .carousel-indicators{
@@ -112,7 +121,7 @@
   align-items: flex-end;
   width: 100%;
   padding: 0 8rem 0 5rem;
-  height: 65vh;
+  height: 480px;
 }
 
 .information {
@@ -243,6 +252,10 @@
     padding: 0 4rem;
   }
 
+  .hero-heading h1 {
+    font-size: 5rem;
+  }
+
   .carousel-wrapper {
     height: 30vh;
   }
@@ -274,9 +287,11 @@
     font-size: 1rem;
   }
 
+  .carousel-indicators-container{
+    justify-self: center;
+  }
   .carousel-container {
     flex-direction: column;
-
   }
 
   .carousel-container svg {
@@ -286,6 +301,7 @@
   .carousel-wrapper {
     flex-direction: column-reverse;
     height: auto;
+    margin-top: 4rem;
   }
 
   .img-container {

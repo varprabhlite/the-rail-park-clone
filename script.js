@@ -105,6 +105,7 @@
   function changeSlide() {
     carouselInfo[lastIndex].classList.add("fade-out");
     carouselImgs[lastIndex].classList.add("fade-out");
+    
     if(lastIndex === 0) {
       hoursBadge.style.opacity = "0";
     }
@@ -145,11 +146,12 @@
       carouselInfo.push(extraCarouselInfo[extraCounter]);
       extraCounter++;
       slideCounter.innerText = `${2 + extraCounter}`;
-
+      
       if (currentIndex >= carouselImgs.length - 1) {
         lastIndex = currentIndex;
         currentIndex = carouselImgs.length - 1;
       }
+
     }
     updateCarouselIndicators();
 

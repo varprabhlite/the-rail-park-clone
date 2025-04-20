@@ -383,7 +383,7 @@ nav .nav-container a:hover {
   
   .hamburger-content {
     top: 14vh;
-    max-height: calc(100vh - 6vh);
+    height: calc(100vh - 6vh);
     overflow-y: auto;
   }
   
